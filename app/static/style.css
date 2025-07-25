@@ -236,9 +236,22 @@ a{
 @media(max-width: 750px){
     .container{
         grid-template-columns: 1fr;
-        gap: 2rem;
+        column-gap: 0;
     }
     input{
         width: 10rem;
+    }
+    .smaller_box{
+        display: none;
+    }
+    .bigger_box{
+        height: 80%;
+    }
+    .second_part{
+        gap: 0;
+        height: 70%;
+    }
+    .main_box{
+        height: auto;
     }
 }
