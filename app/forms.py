@@ -9,3 +9,7 @@ class SubscriptionForm(FlaskForm):
         'Renewal Date', validators=[DataRequired()], format='%Y-%m-%d'
     )
     submit = SubmitField('Add Subscription')
+
+class EmailForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired()])
+    submit = SubmitField('Update Email')
