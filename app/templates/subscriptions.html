@@ -11,17 +11,8 @@
 {% block content %}
 <main class="main">
     <section class="menu">
-        <h1>Mindfull_sub</h1>
+        <h1>Mindfull Subscriptions</h1>
     </section>
-
-<<<<<<< HEAD
-<h2>Your Subscriptions</h2>
-<ul>
-{% for sub in subscriptions %}
-    <li>{{ sub.name }} - ${{ sub.cost }} - renews on {{ sub.renewal_date }}
-        [<a href="{{ url_for('main.delete', sub_id=sub.id) }}">delete</a>]</li>
-{% endfor %}
-</ul>
 
 <form method="POST">
     {{ email_form.hidden_tag() }}
@@ -30,8 +21,6 @@
 
 <p>Total: ${{ total_cost }}</p>
 
-{% endblock %}
-=======
     <section class="container">
         
         <div class="bigger_box">
@@ -45,7 +34,6 @@
                         </li>
                     {% endfor %}
                     </ul>
-                    {% endblock %}
             </div>
         </div>
 
@@ -80,4 +68,4 @@
 </main>
 </body>
 </html>
->>>>>>> 5198cca546ecb9a8625a9a1065545170109e5863
+{% endblock %}
