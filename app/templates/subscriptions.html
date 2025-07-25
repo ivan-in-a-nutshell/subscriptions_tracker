@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Add a Subscription</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>{{ form.name.label }} {{ form.name(size=20) }}</p>
+    <p>{{ form.cost.label }} {{ form.cost() }}</p>
+    <p>{{ form.renewal_date.label }} {{ form.renewal_date() }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+
+<h2>Your Subscriptions</h2>
+<ul>
+{% for sub in subscriptions %}
+    <li>{{ sub.name }} - ${{ sub.cost }} - renews on {{ sub.renewal_date }}
+        [<a href="{{ url_for('main.delete', sub_id=sub.id) }}">delete</a>]</li>
+{% endfor %}
+</ul>
+{% endblock %}
