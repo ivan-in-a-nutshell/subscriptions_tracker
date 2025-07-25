@@ -3,19 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>Subscription Tracker</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
 </head>
 <body>
-    <h1>Subscription Tracker</h1>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-        {% for message in messages %}
-          <li>{{ message }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-    {% block content %}{% endblock %}
+    
 </body>
 </html>

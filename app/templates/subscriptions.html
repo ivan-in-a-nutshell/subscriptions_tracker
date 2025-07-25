@@ -1,19 +1,64 @@
-{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+<title>Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
 {% block content %}
-<h2>Add a Subscription</h2>
-<form method="POST">
-    {{ form.hidden_tag() }}
-    <p>{{ form.name.label }} {{ form.name(size=20) }}</p>
-    <p>{{ form.cost.label }} {{ form.cost() }}</p>
-    <p>{{ form.renewal_date.label }} {{ form.renewal_date() }}</p>
-    <p>{{ form.submit() }}</p>
-</form>
+<main class="main">
+    <section class="menu">
+        <h1>Mindfull_sub</h1>
+    </section>
 
-<h2>Your Subscriptions</h2>
-<ul>
-{% for sub in subscriptions %}
-    <li>{{ sub.name }} - ${{ sub.cost }} - renews on {{ sub.renewal_date }}
-        [<a href="{{ url_for('main.delete', sub_id=sub.id) }}">delete</a>]</li>
-{% endfor %}
-</ul>
-{% endblock %}
+    <section class="container">
+        
+        <div class="bigger_box">
+            <h3>Your Subscriptions</h3>
+            <div>
+                    <ul>
+                    {% for sub in subscriptions %}
+                        <li>{{ sub.name }} - ${{ sub.cost }} - renews on {{ sub.renewal_date }}
+                            [<a href="{{ url_for('main.delete', sub_id=sub.id) }}">delete</a>]
+                            <hr>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                    {% endblock %}
+            </div>
+        </div>
+
+
+
+        <div class="main_box">
+            <h3 class="center_text">Add a Subscription</h3>
+                <form method="POST">
+                    <div class="grid">
+                          {{ form.hidden_tag() }}
+                        <div class="subscriptions">
+                            <p>{{ form.name.label }} {{ form.name(size=20) }}</p>
+                        </div>
+                        <div class="subscriptions">
+                            <p>{{ form.cost.label }} {{ form.cost() }} <span>$</span></p>
+                        </div>
+                        <div class="subscriptions">
+                            <p>{{ form.renewal_date.label }} {{ form.renewal_date() }}</p>
+                        </div>
+                        <div class="center">
+                            <p>{{ form.submit(class="button") }}</p>
+                        </div>
+                    </div>
+                </form>
+        </div>
+
+    </section>
+
+   
+
+    
+</main>
+</body>
+</html>
