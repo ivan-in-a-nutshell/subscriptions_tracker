@@ -5,6 +5,11 @@ body{
     padding: 0;
 }
 
+.icon{
+    width: 3rem;
+    height:3rem;
+}
+
 h1{
     font-size: 2rem;
     font-family: 'Ubuntu', sans-serif;
@@ -107,7 +112,7 @@ p{
     padding: 0;
     width: 100%;
     max-height: 100vh;
-    height: 84vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -116,7 +121,7 @@ p{
 .bigger_box{
     padding: 1rem 2rem;
     width: calc(100% - 4rem);
-    max-height: 100%;
+    height: 100%;
     background-color: #82C99D;
     border-radius: 10px;
     overflow-y: auto;
@@ -127,6 +132,7 @@ li{
     font-weight: 400;
     font-size: 1.2rem;
     padding-bottom: .7rem;
+    list-style-type: circle;
 }
 
 a{
@@ -147,10 +153,13 @@ a:hover{
 .smaller_box{
     padding: 1rem 2rem;
     width: calc(100% - 4rem);
-    height: 25%;
+    height: 20%;
     background-color: #82C99D;
     border-radius: 10px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .center_text{
@@ -196,6 +205,13 @@ a{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.text{
+    text-decoration: underline white;
+    font-style: italic;
+    margin-left: 1rem;
+    color:rgb(226, 255, 237);
+}
+
 @media(max-width:1061px){
     span{
         display:none;
@@ -220,9 +236,22 @@ a{
 @media(max-width: 750px){
     .container{
         grid-template-columns: 1fr;
-        gap: 2rem;
+        column-gap: 0;
     }
     input{
         width: 10rem;
+    }
+    .smaller_box{
+        display: none;
+    }
+    .bigger_box{
+        height: 80%;
+    }
+    .second_part{
+        gap: 0;
+        height: 70%;
+    }
+    .main_box{
+        height: auto;
     }
 }
