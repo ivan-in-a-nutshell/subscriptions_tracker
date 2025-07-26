@@ -39,6 +39,7 @@
 
         <div class="main_box">
             <h3 class="center_text">Add a Subscription</h3>
+            <div class="grid">
                 <form method="POST">
                     <div class="grid">
                           {{ form.hidden_tag() }}
@@ -51,16 +52,20 @@
                         <div class="subscriptions">
                             <p>{{ form.renewal_date.label }} {{ form.renewal_date() }}</p>
                         </div>
-                        <div class="subscriptions">
-                                {{ email_form.hidden_tag() }}
-                                <p>{{ email_form.email.label }} {{ email_form.email(size=20) }}</p>
-                                <p style="margin-left: auto;">{{ email_form.submit() }}</p>
-                        </div>
-                        <div class="center">
-                            <p>{{ form.submit(class="button") }}</p>
-                        </div>
                     </div>
                 </form>
+
+                <form method="POST">
+                    <div class="subscriptions">
+                            {{ email_form.hidden_tag() }}
+                            <p>{{ email_form.email.label }} {{ email_form.email(size=20) }}</p>
+                            <p style="margin-left: auto;">{{ email_form.submit() }}</p>
+                    </div>
+                    <div class="center">
+                        <p>{{ form.submit(class="button") }}</p>
+                    </div>
+                </form>
+            </div>
         </div>
 
     </section>
